@@ -90,31 +90,25 @@ The application is architected around a central state managing the `VirtualFileS
 
 A detailed look at the various components and modals within Os-WebDev.
 
-### Developer Environment
+> The interface shows a user leveraging the "Agent Team" to upgrade a landing page. While the center pane facilitates manual coding with context-aware AI tools, the right-hand chat panel handles complex architectural changes—automatically implementing a neumorphic/claymorphic hybrid design and responsive logic based on a single natural language prompt.
 <div align="center">
   <img src="https://github.com/user-attachments/assets/81b46409-1ef2-4bfc-b115-f57f92afdc08" width="100%" alt="Developer Environment Full View" />
 </div>
 <br/>
 
-### Agentic Team & Chat
-<div align="center">
-  <img src="https://github.com/user-attachments/assets/0e6f69da-b2de-45ec-b931-34032dd5b167" width="100%" alt="Agentic Chat Interface" />
-</div>
-<br/>
-
-### Contextual AI Tools & Editor
+> The screenshot displays the **Os-WebDev Simple Mode**, designed for conversational, code-free iteration. The interface is dominated by the **live, rendered output** of the project—a dark-mode, claymorphic landing page—in the center pane. On the right, the **Web Designer AI chat** manages all development tasks, showing the AI executing complex architectural changes (like dark mode logic and entrance animations) based on the user's high-level command ("now make this even better"). This view allows users to focus solely on design and feature progress.
 <div align="center">
   <img src="https://github.com/user-attachments/assets/44ffeb61-0a4e-46e7-9266-39a425b0e452" width="100%" alt="Context Menu Tools" />
 </div>
 <br/>
 
-### File Management & Configuration
+> This screenshot captures the direct translation of a natural language command into a rendered web page. The central panel displays the **live, light-themed, claymorphic landing page** requested by the user. The right-hand chat confirms the AI's execution and shows the system is actively processing the user's follow-up request ("Coordinating agents..."), demonstrating the platform's seamless, rapid-fire conversational workflow.
 <div align="center">
   <img src="https://github.com/user-attachments/assets/e77468dc-bbc7-41a5-8ea4-eb1f8e6d87de" width="100%" alt="File Manager" />
 </div>
 <br/>
 
-### Information & Documentation Modal
+> The screenshot shows **Os-WebDev Developer Mode**, featuring the full IDE structure with the code editor in dark theme. The central action highlights the contextual **"AI Tools" menu**, which is activated over selected HTML, offering granular assistance like **Refactor** and **Find Bugs**. On the right, the **Agent Team panel** provides a transparent, file-by-file audit log of the complex changes recently implemented by the AI (CSS variables, dark mode logic, etc.), seamlessly blending hands-on coding with advanced generative assistance.
 <div align="center">
   <img src="https://github.com/user-attachments/assets/5a22397c-cd11-4673-8949-43e6e1b144ba" width="100%" alt="Documentation Modal" />
 </div>
