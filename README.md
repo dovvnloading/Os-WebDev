@@ -1,10 +1,14 @@
 # Os-WebDev
 
-<div align="center">
-  <img src="https://github.com/user-attachments/assets/a253ed59-79b2-4db7-81cc-cce4fc34e022" alt="Os-WebDev Interface Overview" width="100%" />
-</div>
+
+
+
+
 
 <div align="center">
+  
+
+
 
 ![License](https://img.shields.io/github/license/dovvnloading/Os-WebDev?style=for-the-badge)
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
@@ -12,6 +16,12 @@
 ![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
 ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
 ![Gemini](https://img.shields.io/badge/Google%20Gemini-8E75B2?style=for-the-badge&logo=google&logoColor=white)
+
+
+<br>
+<br>
+
+<img src="https://github.com/user-attachments/assets/e14db417-5ff9-4a39-bc92-e1df0d312c16" width="94%" alt="Welcome" />
 
 </div>
 
@@ -30,9 +40,12 @@ This project acts as a functional prototype intended to break down the barriers 
 The application supports seamless transitions between themes while maintaining its distinct "claymorphism" design language—combining inner shadows, outer drop shadows, and rounded corners to create a soft, 3D, tactile aesthetic.
 
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/28f2c8af-fb2a-47fa-8a66-2e44a679c5a4" width="48%" alt="Light Mode Interface" />
-  <img src="https://github.com/user-attachments/assets/a3c411a3-83f3-411d-8aca-719d27e0d18f" width="48%" alt="Dark Mode Interface" />
+  <img src="https://github.com/user-attachments/assets/53a58f59-97d5-4a06-98bb-c7d45f692baa" width="48%" alt="Light Mode Interface" />
+  <img src="https://github.com/user-attachments/assets/de63218b-fad6-4332-86cc-91b53d779344" width="48%" alt="Dark Mode Interface" />
 </div>
+
+
+
 
 ## Key Features
 
@@ -86,32 +99,73 @@ The application is architected around a central state managing the `VirtualFileS
     *   **Developer Mode:** Changes are stored as `suggestedChanges`, prompting the user to Review & Apply.
 6.  **Rendering:** The `Preview` component detects VFS changes, reconstructs the DOM (injecting CSS/JS), and updates the sandboxed `iframe`.
 
+---
+
 ## Application Gallery
 
 A detailed look at the various components and modals within Os-WebDev.
 
-> The interface shows a user leveraging the "Agent Team" to upgrade a landing page. While the center pane facilitates manual coding with context-aware AI tools, the right-hand chat panel handles complex architectural changes—automatically implementing a neumorphic/claymorphic hybrid design and responsive logic based on a single natural language prompt.
+
+Image Description:
+>  The screenshot displays the interface of a modern, dark-themed AI-integrated development environment (IDE) designed for an agentic coding workflow. The layout is divided into three distinct panels:
+
+> Left Sidebar (Project Management): Shows a clean file explorer under "Project Files," currently listing index.html, styles.css, and script.js, along with navigation for Settings and About.
+
+> Center Panel (Active Editor): Displays the syntax-highlighted source code for index.html. The code reveals a project titled "The War Diaries of Major Alexei Volkov," featuring semantic HTML tags and class names like clay-card and timeline-container.
+
+> Right Panel (AI Agent Interface): Features a conversational interface with "Lead Dev AI." The chat log shows a user prompt requesting a "stylized darkmode" that matches the app's narrative theme. The AI agent responds with a context-aware plan to > > implement a "Soviet/War themed Blackout Mode," detailing specific modifications for the HTML, CSS, and JS files. The interaction concludes with an interactive "Apply Updates" widget, allowing the user to execute the multi-file changes with a single click.
+
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/81b46409-1ef2-4bfc-b115-f57f92afdc08" width="100%" alt="Developer Environment Full View" />
+  <img src="https://github.com/user-attachments/assets/42bc1a76-5f23-4b5f-bef8-6d5523014020" width="100%" alt="Developer Environment Full View" />
 </div>
 <br/>
 
-> The screenshot displays the **Os-WebDev Simple Mode**, designed for conversational, code-free iteration. The interface is dominated by the **live, rendered output** of the project—a dark-mode, claymorphic landing page—in the center pane. On the right, the **Web Designer AI chat** manages all development tasks, showing the AI executing complex architectural changes (like dark mode logic and entrance animations) based on the user's high-level command ("now make this even better"). This view allows users to focus solely on design and feature progress.
+---
+
+Image Description: 
+> The screenshot captures the "Preview" workspace of the Graphite IDE, demonstrating the immediate visual output of the code changes.
+
+> Center Panel (Live Preview): The main canvas displays the fully rendered web application, "The War Diaries of Major Alexei Volkov." It showcases the newly implemented "Blackout Mode," featuring a dark, gunmetal gray color palette with soft, claymorphism-style depth effects. Key elements include a red star icon, a functional toggle switch labeled "Blackout Mode," and a timeline entry titled "The Treachery" (dated June 22, 1941) containing narrative text.
+
+> Top Bar (Responsive Controls): A toolbar in the upper-left corner offers device emulation toggles (mobile, tablet, desktop, and flexible), indicating the environment's responsive design testing capabilities.
+
+> Right Panel (Contextual Chat): The agent interface remains visible, displaying the conversation history that led to this specific visual result. The "Lead Dev AI" message outlines the successful implementation of the requested features—updating index.html, styles.css, and script.js to achieve the "Soviet/War theme" currently displayed in the preview pane.
+
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/44ffeb61-0a4e-46e7-9266-39a425b0e452" width="100%" alt="Context Menu Tools" />
+  <img src="https://github.com/user-attachments/assets/591779ab-9a17-465f-8072-cce3d3670725" width="100%" alt="A preview of the webpage live in the viewport" />
 </div>
 <br/>
 
-> This screenshot captures the direct translation of a natural language command into a rendered web page. The central panel displays the **live, light-themed, claymorphic landing page** requested by the user. The right-hand chat confirms the AI's execution and shows the system is actively processing the user's follow-up request ("Coordinating agents..."), demonstrating the platform's seamless, rapid-fire conversational workflow.
+---
+
+Image Description: 
+> The screenshot illustrates an advanced stage of the development cycle within Graphite, where the user and AI are collaborating to add complex functionality and navigation to the web application.
+
+> Center Panel (Enhanced Preview): The interface now features significant UI upgrades above the timeline. A "Search archives" input field allows users to filter content by keywords (e.g., 'Stalingrad', 'Tanks'), sitting above a row of "Year Filter" pill buttons (1941–1945). These additions maintain the app's dark, claymorphism aesthetic while introducing robust navigation tools.
+
+> Right Panel (Creative Ideation): The chat log demonstrates the AI's role as a creative partner rather than just a code generator. Following the user's prompt to "add even more features," the "Lead Dev AI" proactively suggests three specific immersive mechanics to deepen the narrative experience: *Dynamic Redaction System: An "NKVD Censor" algorithm to interactively blackout sensitive text.* - *War Progress Bar: A visual scroll indicator tracking the timeline.*
+
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/e77468dc-bbc7-41a5-8ea4-eb1f8e6d87de" width="100%" alt="File Manager" />
+  <img src="https://github.com/user-attachments/assets/864ff415-4682-4c0b-abef-3fd7600bb6a9" width="100%" alt="Agentic enhancemenets into the webpage" />
 </div>
 <br/>
 
-> The screenshot shows **Os-WebDev Developer Mode**, featuring the full IDE structure with the code editor in dark theme. The central action highlights the contextual **"AI Tools" menu**, which is activated over selected HTML, offering granular assistance like **Refactor** and **Find Bugs**. On the right, the **Agent Team panel** provides a transparent, file-by-file audit log of the complex changes recently implemented by the AI (CSS variables, dark mode logic, etc.), seamlessly blending hands-on coding with advanced generative assistance.
+---
+
+Image Description: 
+> The screenshot focuses on the "Context Control" modal, a "Pipeline Optimizer" feature that overlays the blurred development environment. This interface demonstrates the granular control users have over the data sent to the AI model, crucial for managing token usage and context relevance.
+
+> Modal Header: Titled "Context Control," this tool allows the user to fine-tune the information pipeline.
+
+> Global Toggles: Two main switches allow the user to include or exclude "Chat History" (previous conversation context) and "Project Files" (codebase context) from the next prompt.
+
+> Active File Selection: A detailed list below shows the specific files currently loaded into the context window (index.html, styles.css, script.js). Each has an individual checkbox, enabling the developer to selectively share only the files relevant to the current task, ensuring the AI focuses exactly where needed without noise.
+
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/5a22397c-cd11-4673-8949-43e6e1b144ba" width="100%" alt="Documentation Modal" />
+  <img src="https://github.com/user-attachments/assets/1136bbd0-417c-4776-b7c8-2dd190a21211" width="100%" alt="Context Container Settings" />
 </div>
+
+---
 
 ## Installation
 
