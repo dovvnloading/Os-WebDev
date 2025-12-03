@@ -19,59 +19,61 @@
       /* --- THEME CONFIGURATION --- */
       :root {
         /* LIGHT MODE VARIABLES */
-        --bg-color: #f3f4f6;
-        --clay-bg: #f3f4f6;
-        --clay-accent: #6366f1; /* Violet */
-        --clay-accent-hover: #4f46e5;
-        --clay-text: #1f2937;
-        --border-color: rgba(255,255,255,0.6);
+        --bg-color: #e0e5ec;
+        --clay-bg: #e0e5ec;
+        --clay-accent: #6d5dfc;
+        --clay-accent-hover: #5b4cc4;
+        --clay-text: #4a5568;
+        --border-color: rgba(255,255,255,0.4);
 
         /* LIGHT MODE SHADOWS (Soft Clay) */
         --shadow-out: 
             9px 9px 16px rgba(163,177,198,0.6), 
-            -9px -9px 16px rgba(255,255,255, 0.7);
+            -9px -9px 16px rgba(255,255,255, 0.6);
             
         --shadow-in: 
             inset 6px 6px 10px 0 rgba(163,177,198, 0.6), 
-            inset -6px -6px 10px 0 rgba(255,255,255, 0.9);
+            inset -6px -6px 10px 0 rgba(255,255,255, 0.8);
             
         --shadow-float: 
-            20px 20px 60px rgba(163,177,198,0.7), 
-            -20px -20px 60px rgba(255,255,255, 0.7);
+            20px 20px 60px rgba(163,177,198,0.6), 
+            -20px -20px 60px rgba(255,255,255, 0.6);
       }
 
       body.dark-mode {
         /* DARK MODE VARIABLES */
-        --bg-color: #111111;
-        --clay-bg: #18181b;
-        --clay-accent: #818cf8; /* Lighter Violet */
-        --clay-accent-hover: #a78bfa;
-        --clay-text: #e4e4e7;
-        --border-color: rgba(255,255,255,0.08);
+        --bg-color: #1a1b1e; /* Darker, deeper base */
+        --clay-bg: #1e1f23;  /* Slightly lighter surface */
+        --clay-accent: #8b80fc;
+        --clay-accent-hover: #9c92ff;
+        --clay-text: #e2e8f0;
+        --border-color: rgba(255,255,255,0.08); /* Sharper border for definition */
 
-        /* DARK MODE SHADOWS */
+        /* DARK MODE SHADOWS (Redefined for Cleanliness) */
         --shadow-out: 
-            5px 5px 12px rgba(0, 0, 0, 0.5), 
-            -2px -2px 8px rgba(255, 255, 255, 0.04);
-            
+            10px 10px 20px rgba(0,0,0,0.5),      /* Deep shadow bottom-right */
+            -8px -8px 20px rgba(255,255,255,0.03); /* Extremely subtle top-left tint (not glow) */
+
         --shadow-in: 
-            inset 4px 4px 8px rgba(0, 0, 0, 0.5), 
-            inset -2px -2px 6px rgba(255, 255, 255, 0.03);
-            
+            inset 5px 5px 10px rgba(0,0,0,0.5),   /* Inner shadow top-left */
+            inset -5px -5px 10px rgba(255,255,255,0.02); /* Very faint inner highlight bottom-right */
+
         --shadow-float: 
-            0 20px 40px rgba(0,0,0,0.6);
+            0 20px 40px rgba(0,0,0,0.6); /* Pure drop shadow for floating elements */
       }
 
       body {
         background-color: var(--bg-color);
         color: var(--clay-text);
-        font-family: 'Inter', sans-serif;
+        font-family: 'Nunito', sans-serif;
         transition: background-color 0.4s ease, color 0.4s ease;
         overflow-x: hidden;
       }
-      
-      h1, h2, h3 {
-        font-family: 'Plus Jakarta Sans', sans-serif;
+
+      /* FIX FOR GRADIENT TEXT RENDERING */
+      .bg-clip-text {
+        -webkit-background-clip: text;
+        background-clip: text;
       }
 
       /* --- COMPONENTS --- */
@@ -91,7 +93,7 @@
         transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
         border-radius: 0.75rem;
         cursor: pointer;
-        font-weight: 700;
+        font-weight: 800;
         letter-spacing: 0.05em;
         will-change: transform;
         border: 1px solid var(--border-color);
@@ -111,30 +113,23 @@
           outline-offset: 4px;
       }
 
-      /* --- ANIMATIONS --- */
+      /* --- VISIONARY HERO ANIMATIONS --- */
       .floating-orb {
           position: absolute;
           border-radius: 50%;
           background: var(--clay-accent);
-          filter: blur(120px);
-          opacity: 0.2;
-          animation: floatOrb 15s ease-in-out infinite;
+          filter: blur(80px);
+          opacity: 0.15;
+          animation: floatOrb 10s ease-in-out infinite;
           z-index: 0;
           will-change: transform;
       }
       @keyframes floatOrb {
-          0%, 100% { transform: translate(0, 0) scale(1); }
-          50% { transform: translate(40px, -60px) scale(1.1); }
-      }
-      .animate-slide-up {
-        animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
-      }
-      @keyframes slideUp {
-        from { opacity: 0; transform: translateY(30px); }
-        to { opacity: 1; transform: translateY(0); }
+          0%, 100% { transform: translate(0, 0); }
+          50% { transform: translate(30px, -50px); }
       }
 
-      /* --- TURNSTYLE GALLERY --- */
+      /* --- ROBUST TURNSTYLE GALLERY --- */
       .gallery-viewport {
         perspective: 1200px;
         overflow: visible;
@@ -168,13 +163,16 @@
         cursor: pointer;
         will-change: transform, opacity;
       }
+      /* Dark mode specific border for gallery items to make them pop */
       body.dark-mode .gallery-item {
           border: 1px solid var(--border-color);
       }
+
       .gallery-item:focus {
         outline: 4px solid var(--clay-accent);
         outline-offset: 4px;
       }
+
       .gallery-item img {
         width: 100%;
         height: 100%;
@@ -182,6 +180,7 @@
         display: block;
         background-color: #111;
       }
+
       .gallery-caption {
           position: absolute;
           bottom: 0;
@@ -198,24 +197,32 @@
       .gallery-item:focus .gallery-caption {
           transform: translateY(0);
       }
+
+      /* Active Center */
       .gallery-item.active {
         opacity: 1;
         transform: translateX(0) translateZ(0) rotateY(0deg);
         z-index: 20;
         box-shadow: 0 30px 60px -10px rgba(0,0,0,0.5);
       }
+
+      /* Right Side */
       .gallery-item.next {
         opacity: 1;
         transform: translateX(50%) translateZ(-300px) rotateY(-15deg);
         z-index: 10;
-        filter: brightness(0.6);
+        filter: brightness(0.6); /* Darker filter for depth */
       }
+      
+      /* Left Side */
       .gallery-item.prev {
         opacity: 1;
         transform: translateX(-50%) translateZ(-300px) rotateY(15deg);
         z-index: 10;
         filter: brightness(0.6);
       }
+
+      /* Hidden Stack */
       .gallery-item.hidden-left {
           transform: translateX(-80%) translateZ(-600px) rotateY(25deg);
           opacity: 0;
@@ -228,12 +235,13 @@
           z-index: 0;
           pointer-events: none;
       }
+
+      /* Responsive Adjustments */
       @media (max-width: 850px) {
         .gallery-track { width: 90%; height: 300px; }
         .gallery-item.next { transform: translateX(20%) translateZ(-200px) rotateY(-10deg); }
         .gallery-item.prev { transform: translateX(-20%) translateZ(-200px) rotateY(10deg); }
       }
-
     </style>
 </head>
 <body class="min-h-screen flex flex-col selection:bg-clay-accent selection:text-white">
@@ -488,7 +496,9 @@
                 item.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { currentIndex = index; updateGallery(); } });
             });
             document.addEventListener('keydown', (e) => {
-                if (e.target.closest('.gallery-viewport')) {
+                // Check if the event target is inside the gallery viewport to avoid hijacking all arrow keys
+                const target = e.target as HTMLElement;
+                if (target.closest('.gallery-viewport') || target.closest('.gallery-item')) {
                     if (e.key === 'ArrowRight') goNext();
                     if (e.key === 'ArrowLeft') goPrev();
                 }
