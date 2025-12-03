@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Os-WebDev: A browser-based Agentic IDE powered by Google Gemini and React 19.">
-    <title>Os-WebDev | The Creative Engine</title>
+    <meta name="description" content="Graphite: WebDev - An advanced development environment that functions as a cognitive partner, translating natural language into production-ready web applications.">
+    <title>Graphite: WebDev | The Cognitive Architect</title>
     
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     
     <!-- Tailwind (Via CDN) -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -19,58 +19,59 @@
       /* --- THEME CONFIGURATION --- */
       :root {
         /* LIGHT MODE VARIABLES */
-        --bg-color: #e0e5ec;
-        --clay-bg: #e0e5ec;
-        --clay-accent: #6d5dfc;
-        --clay-accent-hover: #5b4cc4;
-        --clay-text: #4a5568;
-        --border-color: rgba(255,255,255,0.4);
+        --bg-color: #f3f4f6;
+        --clay-bg: #f3f4f6;
+        --clay-accent: #6366f1; /* Violet */
+        --clay-accent-hover: #4f46e5;
+        --clay-text: #1f2937;
+        --border-color: rgba(255,255,255,0.6);
 
         /* LIGHT MODE SHADOWS (Soft Clay) */
-        /* Highlights are white, Shadows are dark gray */
         --shadow-out: 
             9px 9px 16px rgba(163,177,198,0.6), 
-            -9px -9px 16px rgba(255,255,255, 0.6);
+            -9px -9px 16px rgba(255,255,255, 0.7);
             
         --shadow-in: 
             inset 6px 6px 10px 0 rgba(163,177,198, 0.6), 
-            inset -6px -6px 10px 0 rgba(255,255,255, 0.8);
+            inset -6px -6px 10px 0 rgba(255,255,255, 0.9);
             
         --shadow-float: 
-            20px 20px 60px rgba(163,177,198,0.6), 
-            -20px -20px 60px rgba(255,255,255, 0.6);
+            20px 20px 60px rgba(163,177,198,0.7), 
+            -20px -20px 60px rgba(255,255,255, 0.7);
       }
 
       body.dark-mode {
         /* DARK MODE VARIABLES */
-        --bg-color: #1a1b1e; /* Darker, deeper base */
-        --clay-bg: #1e1f23;  /* Slightly lighter surface */
-        --clay-accent: #8b80fc;
-        --clay-accent-hover: #9c92ff;
-        --clay-text: #e2e8f0;
-        --border-color: rgba(255,255,255,0.08); /* Sharper border for definition */
+        --bg-color: #111111;
+        --clay-bg: #18181b;
+        --clay-accent: #818cf8; /* Lighter Violet */
+        --clay-accent-hover: #a78bfa;
+        --clay-text: #e4e4e7;
+        --border-color: rgba(255,255,255,0.08);
 
-        /* DARK MODE SHADOWS (Redefined for Cleanliness) */
-        /* REMOVED the "White" highlight. Replaced with Deep Shadows + Lighter Surface tones */
-        
+        /* DARK MODE SHADOWS */
         --shadow-out: 
-            10px 10px 20px rgba(0,0,0,0.5),      /* Deep shadow bottom-right */
-            -8px -8px 20px rgba(255,255,255,0.03); /* Extremely subtle top-left tint (not glow) */
-
+            5px 5px 12px rgba(0, 0, 0, 0.5), 
+            -2px -2px 8px rgba(255, 255, 255, 0.04);
+            
         --shadow-in: 
-            inset 5px 5px 10px rgba(0,0,0,0.5),   /* Inner shadow top-left */
-            inset -5px -5px 10px rgba(255,255,255,0.02); /* Very faint inner highlight bottom-right */
-
+            inset 4px 4px 8px rgba(0, 0, 0, 0.5), 
+            inset -2px -2px 6px rgba(255, 255, 255, 0.03);
+            
         --shadow-float: 
-            0 20px 40px rgba(0,0,0,0.6); /* Pure drop shadow for floating elements */
+            0 20px 40px rgba(0,0,0,0.6);
       }
 
       body {
         background-color: var(--bg-color);
         color: var(--clay-text);
-        font-family: 'Nunito', sans-serif;
+        font-family: 'Inter', sans-serif;
         transition: background-color 0.4s ease, color 0.4s ease;
         overflow-x: hidden;
+      }
+      
+      h1, h2, h3 {
+        font-family: 'Plus Jakarta Sans', sans-serif;
       }
 
       /* --- COMPONENTS --- */
@@ -90,7 +91,7 @@
         transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
         border-radius: 0.75rem;
         cursor: pointer;
-        font-weight: 800;
+        font-weight: 700;
         letter-spacing: 0.05em;
         will-change: transform;
         border: 1px solid var(--border-color);
@@ -110,23 +111,30 @@
           outline-offset: 4px;
       }
 
-      /* --- VISIONARY HERO ANIMATIONS --- */
+      /* --- ANIMATIONS --- */
       .floating-orb {
           position: absolute;
           border-radius: 50%;
           background: var(--clay-accent);
-          filter: blur(80px);
-          opacity: 0.15;
-          animation: floatOrb 10s ease-in-out infinite;
+          filter: blur(120px);
+          opacity: 0.2;
+          animation: floatOrb 15s ease-in-out infinite;
           z-index: 0;
           will-change: transform;
       }
       @keyframes floatOrb {
-          0%, 100% { transform: translate(0, 0); }
-          50% { transform: translate(30px, -50px); }
+          0%, 100% { transform: translate(0, 0) scale(1); }
+          50% { transform: translate(40px, -60px) scale(1.1); }
+      }
+      .animate-slide-up {
+        animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+      }
+      @keyframes slideUp {
+        from { opacity: 0; transform: translateY(30px); }
+        to { opacity: 1; transform: translateY(0); }
       }
 
-      /* --- ROBUST TURNSTYLE GALLERY --- */
+      /* --- TURNSTYLE GALLERY --- */
       .gallery-viewport {
         perspective: 1200px;
         overflow: visible;
@@ -160,16 +168,13 @@
         cursor: pointer;
         will-change: transform, opacity;
       }
-      /* Dark mode specific border for gallery items to make them pop */
       body.dark-mode .gallery-item {
           border: 1px solid var(--border-color);
       }
-
       .gallery-item:focus {
         outline: 4px solid var(--clay-accent);
         outline-offset: 4px;
       }
-
       .gallery-item img {
         width: 100%;
         height: 100%;
@@ -177,7 +182,6 @@
         display: block;
         background-color: #111;
       }
-
       .gallery-caption {
           position: absolute;
           bottom: 0;
@@ -194,32 +198,24 @@
       .gallery-item:focus .gallery-caption {
           transform: translateY(0);
       }
-
-      /* Active Center */
       .gallery-item.active {
         opacity: 1;
         transform: translateX(0) translateZ(0) rotateY(0deg);
         z-index: 20;
         box-shadow: 0 30px 60px -10px rgba(0,0,0,0.5);
       }
-
-      /* Right Side */
       .gallery-item.next {
         opacity: 1;
         transform: translateX(50%) translateZ(-300px) rotateY(-15deg);
         z-index: 10;
-        filter: brightness(0.6); /* Darker filter for depth */
+        filter: brightness(0.6);
       }
-      
-      /* Left Side */
       .gallery-item.prev {
         opacity: 1;
         transform: translateX(-50%) translateZ(-300px) rotateY(15deg);
         z-index: 10;
         filter: brightness(0.6);
       }
-
-      /* Hidden Stack */
       .gallery-item.hidden-left {
           transform: translateX(-80%) translateZ(-600px) rotateY(25deg);
           opacity: 0;
@@ -232,8 +228,6 @@
           z-index: 0;
           pointer-events: none;
       }
-
-      /* Responsive Adjustments */
       @media (max-width: 850px) {
         .gallery-track { width: 90%; height: 300px; }
         .gallery-item.next { transform: translateX(20%) translateZ(-200px) rotateY(-10deg); }
@@ -249,130 +243,110 @@
         <div class="max-w-7xl mx-auto flex justify-between items-center">
             <div class="flex items-center gap-3">
                 <div class="w-10 h-10 flex items-center justify-center clay-btn rounded-xl text-clay-accent" aria-hidden="true">
-                    <i data-lucide="cpu"></i>
+                    <i data-lucide="layers"></i>
                 </div>
-                <span class="text-xl font-bold tracking-tight text-clay-text">Os-WebDev</span>
+                <span class="text-xl font-bold tracking-tight text-clay-text">Graphite: WebDev</span>
             </div>
             
             <div class="flex items-center gap-4">
-                <a href="https://github.com/dovvnloading/Os-WebDev" target="_blank" class="hidden md:flex clay-btn px-4 py-2 text-xs uppercase tracking-widest items-center gap-2" aria-label="View Source on GitHub">
+                <a href="https://github.com/dovvnloading/Graphite-WebDev" target="_blank" class="hidden md:flex clay-btn px-4 py-2 text-xs uppercase tracking-widest items-center gap-2" aria-label="View Showcase on GitHub">
                     <i data-lucide="github" class="w-4 h-4"></i> GitHub
                 </a>
                 <button id="themeToggle" class="clay-btn p-3 rounded-full flex items-center justify-center w-12 h-12" aria-label="Toggle Dark Mode">
-                    <i data-lucide="moon" class="w-5 h-5 fill-current"></i>
+                    <i data-lucide="moon" class="w-5 h-5"></i>
                 </button>
             </div>
         </div>
     </nav>
 
-    <!-- VISIONARY LANDING SECTION -->
-    <!-- FIX: Added pb-40 to prevent button clipping -->
-    <section class="min-h-screen flex items-center justify-center relative overflow-hidden pt-20 pb-40 px-6">
-        <!-- Background Orbs -->
+    <!-- HERO SECTION -->
+    <section class="min-h-screen flex items-center justify-center relative overflow-hidden pt-20 pb-20 px-6">
         <div class="floating-orb w-96 h-96 top-0 left-0 bg-blue-400"></div>
         <div class="floating-orb w-[500px] h-[500px] bottom-0 right-0 bg-purple-400" style="animation-delay: -5s"></div>
 
         <div class="max-w-6xl mx-auto text-center relative z-10">
-            
-            <div class="mb-8 inline-flex items-center gap-2 bg-clay-bg/50 backdrop-blur-md border border-white/10 rounded-full px-5 py-2 animate-bounce shadow-lg">
+            <div class="mb-8 inline-flex items-center gap-2 bg-clay-bg/50 backdrop-blur-md border border-white/10 rounded-full px-5 py-2 animate-slide-up shadow-lg">
                 <span class="flex h-3 w-3 relative">
                     <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-clay-accent opacity-75"></span>
                     <span class="relative inline-flex rounded-full h-3 w-3 bg-clay-accent"></span>
                 </span>
-                <span class="text-xs font-extrabold uppercase tracking-widest text-clay-text">The Future of Creation is Here</span>
+                <span class="text-xs font-extrabold uppercase tracking-widest text-clay-text">From Cognition to Code</span>
             </div>
-
-            <h1 class="text-6xl md:text-8xl font-black text-clay-text mb-6 leading-tight tracking-tight">
-                Dream It. <br>
-                Speak It. <br>
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-clay-accent to-blue-400">Publish It.</span>
+            <h1 class="text-6xl md:text-8xl font-black text-clay-text mb-6 leading-tight tracking-tight animate-slide-up" style="animation-delay: 0.1s;">
+                Your Cognitive <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-clay-accent to-blue-400">Architect.</span>
             </h1>
-
-            <p class="text-xl md:text-3xl text-clay-text opacity-70 max-w-4xl mx-auto mb-12 font-light leading-relaxed">
-                The barrier to entry to web design has nearly vanished. <br>
-                Whether you're an artist, a writer, or a dreamer—turn your imagination into functional reality with your own <strong>Agentic Design Team</strong>.
+            <p class="text-xl md:text-2xl text-clay-text opacity-70 max-w-4xl mx-auto mb-12 font-light leading-relaxed animate-slide-up" style="animation-delay: 0.2s;">
+                Graphite is a development environment that acts as a cognitive partner, bridging the gap between human thought and the rigid structure of code. Operate at the speed of your ideas.
             </p>
-
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-8">
-                <a href="#demo" class="clay-btn px-10 py-5 text-xl flex items-center gap-3 group" aria-label="Watch Demo Video">
-                    <i data-lucide="play-circle" class="group-hover:text-pink-500 transition-colors"></i>
-                    Watch the Demo
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-8 animate-slide-up" style="animation-delay: 0.3s;">
+                <a href="#gallery-heading" class="clay-btn px-10 py-5 text-xl flex items-center gap-3 group" aria-label="See the Features">
+                    <i data-lucide="eye" class="group-hover:text-pink-500 transition-colors"></i>
+                    See the Features
                 </a>
-                <a href="https://github.com/dovvnloading/Os-WebDev" class="flex items-center gap-2 text-clay-text font-bold hover:text-clay-accent transition-colors" aria-label="Start Building Locally">
-                    Start Building Locally <i data-lucide="arrow-right"></i>
+                <a href="https://github.com/dovvnloading/Graphite-WebDev" target="_blank" class="flex items-center gap-2 text-clay-text font-bold hover:text-clay-accent transition-colors" aria-label="View on GitHub">
+                    View on GitHub <i data-lucide="arrow-right"></i>
                 </a>
-            </div>
-
-            <!-- Floating UI Elements Decoration (Decorative only) -->
-            <div class="hidden md:block absolute top-1/2 -left-20 clay-card p-4 rotate-12 opacity-80 pointer-events-none" aria-hidden="true">
-                <div class="flex gap-2 mb-2"><div class="w-3 h-3 rounded-full bg-red-400"></div><div class="w-3 h-3 rounded-full bg-yellow-400"></div></div>
-                <div class="h-2 w-24 bg-gray-300 rounded mb-2"></div>
-                <div class="h-2 w-16 bg-gray-300 rounded"></div>
-            </div>
-             <div class="hidden md:block absolute top-1/3 -right-20 clay-card p-4 -rotate-12 opacity-80 pointer-events-none" aria-hidden="true">
-                <i data-lucide="palette" class="w-8 h-8 text-clay-accent"></i>
             </div>
         </div>
     </section>
 
-    <!-- ROBUST TURNSTYLE GALLERY -->
-    <section class="py-20 bg-black/5 relative overflow-hidden" aria-labelledby="gallery-heading">
+    <!-- MULTI-MODAL WORKSPACE SECTION -->
+    <section class="py-20 px-6 bg-black/5">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-extrabold text-clay-text mb-4">A Workspace for Every Workflow</h2>
+                <p class="text-lg text-clay-text opacity-60 max-w-3xl mx-auto">Graphite adapts to you. Choose the mode that best suits your task, from pure conversation to deep technical control.</p>
+            </div>
+            <img class="w-full rounded-3xl shadow-float" src="https://github.com/user-attachments/assets/b4aeec82-fb83-4c64-9f6f-c700363a439c" alt="Application launch window showing three modes: Designer, Developer, and Architect" />
+        </div>
+    </section>
+    
+    <!-- GALLERY SECTION -->
+    <section class="py-20 bg-clay-bg" aria-labelledby="gallery-heading">
         <div class="max-w-7xl mx-auto text-center mb-10 px-6">
             <h2 id="gallery-heading" class="text-4xl font-extrabold text-clay-text mb-4">A Masterpiece of Interface Design</h2>
             <p class="text-lg text-clay-text opacity-60">A tactile, responsive environment that feels alive. Use Arrow Keys to Navigate.</p>
         </div>
-
-        <!-- Viewport -->
         <div class="gallery-viewport" role="region" aria-label="Image Gallery">
             <div class="gallery-track" id="galleryTrack">
-                <!-- Image 1 -->
-                <div class="gallery-item" data-index="0" tabindex="0" role="button" aria-label="View Welcome Screen">
-                    <img src="https://github.com/user-attachments/assets/e14db417-5ff9-4a39-bc92-e1df0d312c16" alt="Welcome Screen showing Claymorphic UI" onerror="this.onerror=null;this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNDUwIiB2aWV3Qm94PSIwIDAgODAwIDQ1MCI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iIzI0MmIzOCIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjN2E4Yjk5IiBmb250LXNpemU9IjI0IiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiI+SW1hZ2UgTm90IEZvdW5kPC90ZXh0Pjwvc3ZnPg==';">
-                    <div class="gallery-caption">
-                        <h3 class="text-xl font-bold text-white">The Hub</h3>
-                        <p class="text-sm opacity-80">Your central command center for AI development.</p>
-                    </div>
-                </div>
-
-                <!-- Image 2 -->
-                <div class="gallery-item" data-index="1" tabindex="0" role="button" aria-label="View Developer Mode">
-                    <img src="https://github.com/user-attachments/assets/42bc1a76-5f23-4b5f-bef8-6d5523014020" alt="Developer Mode showing code editor and file tree" onerror="this.onerror=null;this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNDUwIiB2aWV3Qm94PSIwIDAgODAwIDQ1MCI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iIzI0MmIzOCIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjN2E4Yjk5IiBmb250LXNpemU9IjI0IiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiI+SW1hZ2UgTm90IEZvdW5kPC90ZXh0Pjwvc3ZnPg==';">
+                <div class="gallery-item" data-index="0" tabindex="0" role="button" aria-label="View Developer Mode">
+                    <img src="https://github.com/user-attachments/assets/aac847f7-ba9e-49ca-bac1-0bd9766c5451" alt="Developer Mode showing code editor and file tree">
                     <div class="gallery-caption">
                         <h3 class="text-xl font-bold text-white">Full IDE Control</h3>
-                        <p class="text-sm opacity-80">Access file systems and raw code when you need precision.</p>
+                        <p class="text-sm opacity-80">Access file systems, a full code editor, and the AI agent in one unified view.</p>
                     </div>
                 </div>
-
-                <!-- Image 3 -->
+                <div class="gallery-item" data-index="1" tabindex="0" role="button" aria-label="View Agentic Blueprint">
+                    <img src="https://github.com/user-attachments/assets/ad402255-3020-49d6-9989-f18e43557f6f" alt="Blueprint Canvas showing an Agentic Node workflow">
+                    <div class="gallery-caption">
+                        <h3 class="text-xl font-bold text-white">Agentic Blueprints</h3>
+                        <p class="text-sm opacity-80">Orchestrate multi-agent teams on a visual canvas to tackle complex tasks.</p>
+                    </div>
+                </div>
                 <div class="gallery-item" data-index="2" tabindex="0" role="button" aria-label="View Live Execution">
-                    <img src="https://github.com/user-attachments/assets/591779ab-9a17-465f-8072-cce3d3670725" alt="Live Preview of the generated website" onerror="this.onerror=null;this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNDUwIiB2aWV3Qm94PSIwIDAgODAwIDQ1MCI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iIzI0MmIzOCIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjN2E4Yjk5IiBmb250LXNpemU9IjI0IiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiI+SW1hZ2UgTm90IEZvdW5kPC90ZXh0Pjwvc3ZnPg==';">
+                    <img src="https://github.com/user-attachments/assets/248b763b-10e7-47c5-a7ed-2d1c04f7ea1c" alt="Live Preview of the generated website with responsive controls">
                     <div class="gallery-caption">
                         <h3 class="text-xl font-bold text-white">Live Execution</h3>
-                        <p class="text-sm opacity-80">Code runs instantly in a sandboxed, secure environment.</p>
+                        <p class="text-sm opacity-80">Code runs instantly in a sandboxed, secure environment with responsive tooling.</p>
                     </div>
                 </div>
-
-                <!-- Image 4 -->
-                <div class="gallery-item" data-index="3" tabindex="0" role="button" aria-label="View Agentic Workflow">
-                    <img src="https://github.com/user-attachments/assets/864ff415-4682-4c0b-abef-3fd7600bb6a9" alt="Agentic AI Chat Workflow" onerror="this.onerror=null;this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNDUwIiB2aWV3Qm94PSIwIDAgODAwIDQ1MCI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iIzI0MmIzOCIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjN2E4Yjk5IiBmb250LXNpemU9IjI0IiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiI+SW1hZ2UgTm90IEZvdW5kPC90ZXh0Pjwvc3ZnPg==';">
-                    <div class="gallery-caption">
-                        <h3 class="text-xl font-bold text-white">Agentic Logic</h3>
-                        <p class="text-sm opacity-80">Watch as AI Architects plan and Developers execute.</p>
-                    </div>
-                </div>
-
-                <!-- Image 5 -->
-                <div class="gallery-item" data-index="4" tabindex="0" role="button" aria-label="View Dark Mode">
-                    <img src="https://github.com/user-attachments/assets/de63218b-fad6-4332-86cc-91b53d779344" alt="Dark Mode Interface" onerror="this.onerror=null;this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNDUwIiB2aWV3Qm94PSIwIDAgODAwIDQ1MCI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iIzI0MmIzOCIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjN2E4Yjk5IiBmb250LXNpemU9IjI0IiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiI+SW1hZ2UgTm90IEZvdW5kPC90ZXh0Pjwvc3ZnPg==';">
+                <div class="gallery-item" data-index="3" tabindex="0" role="button" aria-label="View Dark Mode">
+                    <img src="https://github.com/user-attachments/assets/75c45009-7269-434e-a131-4928d6bc3e88" alt="Dark Mode Interface">
                     <div class="gallery-caption">
                         <h3 class="text-xl font-bold text-white">Adaptive Aesthetics</h3>
-                        <p class="text-sm opacity-80">Seamless switching between Light and Dark claymorphism.</p>
+                        <p class="text-sm opacity-80">Seamlessly switch between meticulously crafted Light and Dark claymorphic themes.</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-index="4" tabindex="0" role="button" aria-label="View GitHub Integration">
+                    <img src="https://github.com/user-attachments/assets/d1084d1d-028b-4b6f-9158-85a9381187b7" alt="GitHub Integration showing repository import">
+                    <div class="gallery-caption">
+                        <h3 class="text-xl font-bold text-white">Full GitHub Integration</h3>
+                        <p class="text-sm opacity-80">Clone, analyze, and commit back to your repositories directly within the IDE.</p>
                     </div>
                 </div>
             </div>
         </div>
-
-        <!-- Gallery Controls -->
         <div class="flex justify-center gap-8 mt-10">
             <button id="prevBtn" class="clay-btn w-16 h-16 flex items-center justify-center rounded-full text-xl hover:scale-110 focus:ring-4 ring-offset-2 ring-clay-accent" aria-label="Previous Image">
                 <i data-lucide="arrow-left"></i>
@@ -383,112 +357,60 @@
         </div>
     </section>
 
-    <!-- VIDEO SECTION -->
-    <section id="demo" class="py-20 px-6">
-        <div class="max-w-5xl mx-auto">
-            <div class="text-center mb-10">
-                <div class="inline-flex items-center gap-2 px-3 py-1 mb-4 rounded-full clay-inset text-[10px] font-bold uppercase tracking-widest text-clay-accent opacity-70">
-                    <i data-lucide="youtube" class="w-3 h-3"></i> Watch Demo
-                </div>
-                <h2 class="text-4xl font-extrabold text-clay-text">3 Min Showcase</h2>
-            </div>
-            
-            <!-- Clay Monitor Container -->
-            <div class="clay-card p-4 md:p-8 relative group hover:scale-[1.01] transition-transform duration-500">
-                <!-- Sunken Screen Effect -->
-                <div class="clay-inset p-2 rounded-2xl overflow-hidden bg-black/5">
-                    <div class="relative w-full aspect-video rounded-xl overflow-hidden shadow-inner bg-black">
-                        <!-- Loading="lazy" added for performance -->
-                        <iframe 
-                            class="absolute top-0 left-0 w-full h-full" 
-                            src="https://www.youtube.com/embed/RUpJBC4BIL8?si=VpkBb_8vbBMbkxoB" 
-                            title="Os-WebDev Walkthrough" 
-                            frameborder="0" 
-                            loading="lazy"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                            referrerpolicy="strict-origin-when-cross-origin" 
-                            allowfullscreen>
-                        </iframe>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ARCHITECTURE / TECHNICAL DETAILS -->
-    <section class="py-20 px-6 relative">
+    <!-- TECHNICAL DETAILS SECTION -->
+    <section class="py-20 px-6 relative bg-black/5">
         <div class="max-w-7xl mx-auto">
             <div class="mb-16 text-center">
                 <h2 class="text-3xl font-bold text-clay-text mb-4">Under The Hood</h2>
                 <div class="w-24 h-1 bg-clay-accent mx-auto rounded-full"></div>
             </div>
-
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                
-                <!-- Code Snippet Visual -->
-                <div class="clay-inset p-6 rounded-3xl overflow-x-auto border border-white/10 order-2 md:order-1">
+                <div class="clay-card p-6 rounded-3xl overflow-x-auto border border-white/10 order-2 md:order-1">
 <pre class="font-mono text-sm text-clay-text leading-relaxed">
-<span class="text-clay-accent font-bold">// The Shadow Protocol</span>
-<span class="opacity-50">&lt;!-- AI writes this invisibly --&gt;</span>
-&lt;edit path="<span class="text-green-500">styles.css</span>"&gt;
-  &lt;original&gt;
-    .hero { background: #fff; }
-  &lt;/original&gt;
-  &lt;modified&gt;
-    .hero { 
-      background: <span class="text-blue-500">var(--clay-bg)</span>;
-      box-shadow: <span class="text-blue-500">var(--shadow-out)</span>; 
+<span class="text-clay-accent font-bold">// The Shadow Output Protocol</span>
+<span class="text-gray-500">// AI generates this structured data</span>
+{
+  "<span class="text-purple-400">explanation</span>": <span class="text-green-400">"Updated styles..."</span>,
+  "<span class="text-purple-400">changes</span>": [
+    {
+      "<span class="text-blue-400">path</span>": <span class="text-green-400">"styles.css"</span>,
+      "<span class="text-blue-400">operation</span>": <span class="text-green-400">"replace"</span>,
+      "<span class="text-blue-400">search</span>": <span class="text-green-400">".hero { ... }"</span>,
+      "<span class="text-blue-400">code</span>": <span class="text-green-400">".hero { ... new styles }"</span>
     }
-  &lt;/modified&gt;
-&lt;/edit&gt;
+  ]
+}
 
 <span class="text-clay-accent font-bold">// The Client Engine</span>
-<span class="text-purple-500">const</span> applyUpdate = (xml) => {
-  vfs.update(xml);
-  iframe.reload(); <span class="opacity-50">// Instant Refresh</span>
+<span class="text-purple-400">const</span> applyUpdate = (json) => {
+  vfs.update(json.changes);
+  iframe.reload(); <span class="text-gray-500">// Instant Refresh</span>
 };
 </pre>
                 </div>
-
-                <!-- Features Text -->
                 <div class="space-y-8 order-1 md:order-2">
                     <div class="flex gap-4">
-                        <div class="mt-1 w-10 h-10 rounded-lg clay-btn flex items-center justify-center shrink-0" aria-hidden="true">
-                            <i data-lucide="zap"></i>
-                        </div>
+                        <div class="mt-1 w-10 h-10 rounded-lg clay-btn flex items-center justify-center shrink-0" aria-hidden="true"><i data-lucide="zap"></i></div>
                         <div>
                             <h3 class="text-xl font-bold text-clay-text">Client-Side Velocity</h3>
-                            <p class="text-clay-text opacity-70">
-                                No backend server latency. The Virtual File System (VFS) lives in your browser's memory, making updates instantaneous.
-                            </p>
+                            <p class="text-clay-text opacity-70">No backend server latency. The Virtual File System (VFS) lives in your browser, making updates instantaneous.</p>
                         </div>
                     </div>
-
                     <div class="flex gap-4">
-                        <div class="mt-1 w-10 h-10 rounded-lg clay-btn flex items-center justify-center shrink-0" aria-hidden="true">
-                            <i data-lucide="bot"></i>
-                        </div>
+                        <div class="mt-1 w-10 h-10 rounded-lg clay-btn flex items-center justify-center shrink-0" aria-hidden="true"><i data-lucide="bot"></i></div>
                         <div>
                             <h3 class="text-xl font-bold text-clay-text">Gemini 3 Pro Reasoning</h3>
-                            <p class="text-clay-text opacity-70">
-                                Utilizes Google's reasoning models to "Plan" before "Coding", ensuring complex logic isn't just hallucinated, but architected.
-                            </p>
+                            <p class="text-clay-text opacity-70">Utilizes Google's reasoning models to "Plan" before "Coding", ensuring complex logic isn't just hallucinated, but architected.</p>
                         </div>
                     </div>
-
                     <div class="flex gap-4">
-                        <div class="mt-1 w-10 h-10 rounded-lg clay-btn flex items-center justify-center shrink-0" aria-hidden="true">
-                            <i data-lucide="shield-check"></i>
-                        </div>
+                        <div class="mt-1 w-10 h-10 rounded-lg clay-btn flex items-center justify-center shrink-0" aria-hidden="true"><i data-lucide="shield-check"></i></div>
                         <div>
                             <h3 class="text-xl font-bold text-clay-text">Sandboxed Security</h3>
-                            <p class="text-clay-text opacity-70">
-                                User code runs in a strictly isolated iframe context, allowing you to experiment safely without affecting the host OS.
-                            </p>
+                            <p class="text-clay-text opacity-70">User code runs in a strictly isolated iframe with infinite loop protection, allowing you to experiment safely.</p>
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
@@ -496,31 +418,18 @@
     <!-- Footer -->
     <footer class="py-12 px-6 mt-auto border-t border-black/5 bg-clay-bg">
         <div class="max-w-7xl mx-auto flex flex-col items-center text-center">
-            
             <div class="flex items-center gap-6 mb-8">
-                <a href="https://x.com/D3VAUX" target="_blank" aria-label="Twitter Profile" class="clay-btn w-12 h-12 flex items-center justify-center rounded-full hover:text-blue-400">
-                    <i data-lucide="twitter"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/matt-wesney" target="_blank" aria-label="LinkedIn Profile" class="clay-btn w-12 h-12 flex items-center justify-center rounded-full hover:text-blue-700">
-                    <i data-lucide="linkedin"></i>
-                </a>
-                <a href="https://www.youtube.com/@mattwesney" target="_blank" aria-label="YouTube Channel" class="clay-btn w-12 h-12 flex items-center justify-center rounded-full hover:text-red-500">
-                    <i data-lucide="youtube"></i>
-                </a>
-                <a href="https://github.com/dovvnloading/Os-WebDev" target="_blank" aria-label="GitHub Repository" class="clay-btn w-12 h-12 flex items-center justify-center rounded-full hover:text-gray-900">
-                    <i data-lucide="github"></i>
-                </a>
+                <a href="https://x.com/D3VAUX" target="_blank" aria-label="Twitter Profile" class="clay-btn w-12 h-12 flex items-center justify-center rounded-full hover:text-blue-400"><i data-lucide="twitter"></i></a>
+                <a href="https://www.linkedin.com/in/matt-wesney" target="_blank" aria-label="LinkedIn Profile" class="clay-btn w-12 h-12 flex items-center justify-center rounded-full hover:text-blue-700"><i data-lucide="linkedin"></i></a>
+                <a href="https://www.youtube.com/@mattwesney" target="_blank" aria-label="YouTube Channel" class="clay-btn w-12 h-12 flex items-center justify-center rounded-full hover:text-red-500"><i data-lucide="youtube"></i></a>
+                <a href="https://github.com/dovvnloading/Graphite-WebDev" target="_blank" aria-label="GitHub Repository" class="clay-btn w-12 h-12 flex items-center justify-center rounded-full hover:text-gray-900 dark:hover:text-white"><i data-lucide="github"></i></a>
             </div>
-
             <div class="mb-4">
                 <p class="text-clay-text font-bold text-lg">Designed & Developed by Matt Wesney</p>
-                <p class="text-xs text-clay-accent font-mono uppercase tracking-widest mt-1">Os-WebDev v2.0</p>
-                <p class="text-xs text-clay-accent font-mono uppercase tracking-widest mt-1">Yes, this page was made using Os-Webdev</p>
+                <p class="text-xs text-clay-accent font-mono uppercase tracking-widest mt-1">Graphite 2 Ecosystem</p>
             </div>
-            
             <p class="text-xs text-clay-text opacity-50 max-w-md mx-auto leading-relaxed">
-                <br>
-                
+                Copyright © 2024 Graphite Systems. All Rights Reserved.
             </p>
         </div>
     </footer>
@@ -528,27 +437,16 @@
     <!-- LOGIC SCRIPTS -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            
-            // --- ICONS INITIALIZATION ---
-            if (typeof lucide !== 'undefined') {
-                lucide.createIcons();
-            } else {
-                console.warn('Lucide icons failed to load from CDN.');
-            }
+            if (typeof lucide !== 'undefined') lucide.createIcons();
+            else console.warn('Lucide icons failed to load.');
 
-            // --- THEME LOGIC ---
             const themeBtn = document.getElementById('themeToggle');
             const body = document.body;
-
-            // 1. Check System Preference
             if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
                 body.classList.add('dark-mode');
-                // Update icon immediately if dark mode
                 const icon = themeBtn?.querySelector('i');
                 if (icon) icon.setAttribute('data-lucide', 'sun');
             }
-
-            // 2. Toggle Event
             if (themeBtn) {
                 themeBtn.addEventListener('click', () => {
                     body.classList.toggle('dark-mode');
@@ -561,97 +459,44 @@
                 });
             }
 
-            // --- ROBUST TURNSTYLE GALLERY LOGIC ---
             let currentIndex = 0;
             const items = document.querySelectorAll('.gallery-item');
             const itemCount = items.length;
             const nextBtn = document.getElementById('nextBtn');
             const prevBtn = document.getElementById('prevBtn');
-
-            // Safety check: Don't run gallery logic if no items exist
-            if (itemCount === 0) {
-                console.warn('Gallery items not found.');
-                return;
-            }
+            if (itemCount === 0) return;
 
             function updateGallery() {
                 items.forEach((item, index) => {
-                    // Reset styling classes
                     item.className = 'gallery-item';
-                    
-                    // Allow focusing via keyboard
                     item.setAttribute('tabindex', index === currentIndex ? '0' : '-1');
-
-                    // Calculate Circular Difference
-                    let diff = (index - currentIndex) % itemCount;
-                    if (diff < 0) diff += itemCount;
-                    
-                    // Center the math logic relative to the active item
-                    // e.g., if total is 5: diffs become 0, 1, 2, -2, -1
+                    let diff = (index - currentIndex + itemCount) % itemCount;
                     if (diff > itemCount / 2) diff -= itemCount;
-
-                    // Apply Classes based on position
-                    if (diff === 0) {
-                        item.classList.add('active');
-                        item.focus({preventScroll: true}); // Auto-focus active for accessibility? Optional.
-                    } else if (diff === 1) {
-                        item.classList.add('next');
-                    } else if (diff === -1) {
-                        item.classList.add('prev');
-                    } else if (diff > 0) {
-                        item.classList.add('hidden-right');
-                    } else {
-                        item.classList.add('hidden-left');
-                    }
+                    if (diff === 0) item.classList.add('active');
+                    else if (diff === 1) item.classList.add('next');
+                    else if (diff === -1) item.classList.add('prev');
+                    else if (diff > 0) item.classList.add('hidden-right');
+                    else item.classList.add('hidden-left');
                 });
             }
-
-            // Navigation Helpers
-            const goNext = () => {
-                currentIndex = (currentIndex + 1) % itemCount;
-                updateGallery();
-            };
-
-            const goPrev = () => {
-                currentIndex = (currentIndex - 1 + itemCount) % itemCount;
-                updateGallery();
-            };
-
-            // Event Listeners
+            const goNext = () => { currentIndex = (currentIndex + 1) % itemCount; updateGallery(); };
+            const goPrev = () => { currentIndex = (currentIndex - 1 + itemCount) % itemCount; updateGallery(); };
             if (nextBtn) nextBtn.addEventListener('click', goNext);
             if (prevBtn) prevBtn.addEventListener('click', goPrev);
-
-            // Click Item to Jump
             items.forEach((item, index) => {
-                item.addEventListener('click', () => {
-                    currentIndex = index;
-                    updateGallery();
-                });
-
-                // Keyboard Support (Enter/Space on focused item)
-                item.addEventListener('keydown', (e) => {
-                    if (e.key === 'Enter' || e.key === ' ') {
-                        currentIndex = index;
-                        updateGallery();
-                    }
-                });
+                item.addEventListener('click', () => { currentIndex = index; updateGallery(); });
+                item.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { currentIndex = index; updateGallery(); } });
             });
-
-            // Global Arrow Key Navigation
             document.addEventListener('keydown', (e) => {
-                // Only hijack arrows if gallery is in viewport (simple check) or just globally for this demo page
-                if (e.key === 'ArrowRight') goNext();
-                if (e.key === 'ArrowLeft') goPrev();
+                if (e.target.closest('.gallery-viewport')) {
+                    if (e.key === 'ArrowRight') goNext();
+                    if (e.key === 'ArrowLeft') goPrev();
+                }
             });
-
-            // Initial Paint
-            // Set timeout to ensure CSS transitions don't fire on load
             setTimeout(() => {
                 updateGallery();
-                // Re-render icons incase dynamic content shifted
                 if (typeof lucide !== 'undefined') lucide.createIcons();
             }, 50);
-
         });
     </script>
 </body>
